@@ -45,9 +45,6 @@ d3.csv("https://s3.us-east-2.amazonaws.com/gt-dataviz-d3-workshop/data.csv", fun
       .data([data])
       .attr("class", "line")
       .attr("d", valueline)
-      // .attr("stroke", "blue")
-      // .attr("stroke-width", 2)
-      // .attr("fill", "none");
 
   // Add the X Axis
   svg.append("g")
