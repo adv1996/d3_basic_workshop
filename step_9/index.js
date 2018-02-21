@@ -17,7 +17,7 @@ var svgContainer = d3.select("body").append("svg")
 
 //The line SVG Path we draw
 var lineGraph = svgContainer.append("path")
-    .attr("d", lineFunction(lineData))
+    .attr("d", lineFunction(lineData)) // explain d attribute
     .attr("stroke", "blue")
     .attr("stroke-width", 2)
     .attr("fill", "none");

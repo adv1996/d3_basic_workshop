@@ -1,10 +1,8 @@
 // combine all the lessons to produce line graph
-// make sure style.css is changed so line looks like a line
 
 // set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var width = 960
+var height = 500
 
 // parse the date / time
 var parseTime = d3.timeParse("%d-%b-%y");
@@ -22,12 +20,11 @@ var valueline = d3.line()
 // appends a 'group' element to 'svg'
 // moves the 'group' element to the top left margin
 var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width + 100)
+    .attr("height", height + 100)
   .append("g")
     .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
-
+          "translate(" + 50 + "," + 50 + ")");
 // Get the data
 d3.csv("https://s3.us-east-2.amazonaws.com/gt-dataviz-d3-workshop/data.csv", function(error, data) {
   if (error) throw error;
@@ -43,10 +40,14 @@ d3.csv("https://s3.us-east-2.amazonaws.com/gt-dataviz-d3-workshop/data.csv", fun
   y.domain([0, d3.max(data, function(d) { return d.close; })]);
 
   // Add the valueline path.
+  // need to put data in brackets because .data can only take an array, function, or nothing, brackets ensures that each element is passed
   svg.append("path")
       .data([data])
       .attr("class", "line")
-      .attr("d", valueline);
+      .attr("d", valueline)
+      // .attr("stroke", "blue")
+      // .attr("stroke-width", 2)
+      // .attr("fill", "none");
 
   // Add the X Axis
   svg.append("g")
@@ -58,3 +59,6 @@ d3.csv("https://s3.us-east-2.amazonaws.com/gt-dataviz-d3-workshop/data.csv", fun
       .call(d3.axisLeft(y));
 
 });
+
+
+// ADVANCED HOVER OVER FUNCTION https://bl.ocks.org/micahstubbs/e4f5c830c264d26621b80b754219ae1b
