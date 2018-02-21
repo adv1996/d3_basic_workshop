@@ -11,7 +11,7 @@ Intro
 76 minutes planned 14 minutes for Questions
 
 1. Set Up Foundation (5 min)
-	a. HTML setup
+ - HTML setup
 	b. CSS example
 	c. Javascript
 		i. DOM
