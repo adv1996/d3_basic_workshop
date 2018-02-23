@@ -26,15 +26,15 @@ repeat();
 
 function repeat() {
   timeCircle
-    .attr('cx', 210)          // position the circle at 40 on the x axis
-    .attr('cy', (45)+25) // position the circle at 250 on the y axis
+    .attr('cx', 210)
+    .attr('cy', 70)
     .transition()             // apply a transition
     .ease(d3.easeLinear)           // control the speed of the transition
-    .duration(4000)           // apply it over 2000 milliseconds
-    .attr('cx', 720)          // move the circle to 920 on the x axis
+    .duration(4000)           // apply it over 4000 milliseconds
+    .attr('cx', 720)          // move the circle to 720 on the x axis
     .transition()             // apply a transition
     .ease(d3.easeLinear)           // control the speed of the transition
-    .duration(4000)           // apply it over 2000 milliseconds
-    .attr('cx', 210)          // return the circle to 40 on the x axis
+    .duration(4000)           // apply it over 4000 milliseconds
+    .attr('cx', 210)          // return the circle to 210 on the x axis
     .on("end", repeat);       // when the transition finishes start again
 };
